@@ -5,6 +5,6 @@ has_many :moods
 
 Mood 
 belongs_to :user
-:type - string, :date - date, :notes - text
+:type - string, :date - date, :notes - text, :user_id - integer
 
 types - happy, sad, productive, excited, relaxed, stressed, angry, tired
