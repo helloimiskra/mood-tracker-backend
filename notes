@@ -1,0 +1,10 @@
+User
+has_many :moods
+:username - string, :password - string
+
+
+Mood 
+belongs_to :user
+:type - string, :date - date, :notes - text
+
+types - happy, sad, productive, excited, relaxed, stressed, angry, tired
