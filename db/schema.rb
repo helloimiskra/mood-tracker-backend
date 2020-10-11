@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_04_182603) do
+ActiveRecord::Schema.define(version: 2020_10_11_212035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "moods", force: :cascade do |t|
-    t.string "type"
+    t.string "mood_type"
     t.date "date"
     t.text "notes"
     t.integer "user_id"
