@@ -24,11 +24,11 @@ default: &default
 development:
   <<: *default
   database: mood_tracker_backend_development
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  username: mood_tracker
-  password: password1
+  #adapter: postgresql
+  #encoding: unicode
+  #pool: 5
+  #username: mood_tracker
+  #password: password1
 
 
   # The specified database role being used to connect to postgres.
@@ -64,12 +64,12 @@ development:
 test:
   <<: *default
 
-  adapter: postgresql
-  encoding: unicode
-  database: myapp_test
-  pool: 5
-  username: mood_tracker
-  password: password1
+  #adapter: postgresql
+  #encoding: unicode
+  #database: mood_tracker_backend_development
+  #pool: 5
+  #username: mood_tracker
+  #password: password1
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
