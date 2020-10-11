@@ -21,8 +21,7 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
   #host: localhost
-  #username: mood-tracker
-  #password: 12141993
+
 
 development:
   <<: *default
