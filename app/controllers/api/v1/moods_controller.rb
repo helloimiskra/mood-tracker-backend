@@ -16,4 +16,11 @@ class Api::V1::MoodsController < ApplicationController
 
     def update
     end
+
+    private
+    
+    def mood_params
+        params.require(:mood).permit(:mood_type, :date, :notes, :user_id)
+    end
+
 end
