@@ -1,7 +1,9 @@
 class Api::V1::MoodsController < ApplicationController
     
+    before_action :set_user
+
     def index
-        @moods = Mood.all
+        @moods = @user.moods
         render json: @moods
 
     end
@@ -38,6 +40,10 @@ class Api::V1::MoodsController < ApplicationController
     end
 
     private
+
+    def set_user
+        @user = User.find(params[:user_id])
+    end
     
     def mood_params
         params.require(:mood).permit(:mood_type, :date, :notes, :user_id)
