@@ -1,5 +1,7 @@
 class Api::V1::MoodsController < ApplicationController
+    
     def index
+
     end
 
     def create
