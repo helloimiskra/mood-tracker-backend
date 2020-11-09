@@ -4,14 +4,14 @@ class Api::V1::MoodsController < ApplicationController
 
     def index
         @moods = @user.moods
-        render json: @moods
+        render json: MoodSerializer.new(@moods)
 
     end
 
     def create
         @mood = Mood.new(mood_params)
         if @mood.save
-            render json: @mood
+            render json: MoodSerializer.new(@mood)
         else
             rendor json: {error: "Error creating mood"}
         end
@@ -20,7 +20,7 @@ class Api::V1::MoodsController < ApplicationController
 
     def show
         @mood = Mood.find(params[:id])
-        render json: @mood
+        render json: MoodSerializer.new(@mood)
     
     end
 
@@ -36,7 +36,7 @@ class Api::V1::MoodsController < ApplicationController
     def update
         @mood = Mood.find(params[:id])
         @mood.update(mood_type: params[:mood][:mood_type], date: params[:mood][:date], notes: params[:mood][:notes])
-        render json: @mood
+        render json: MoodSerializer.new(@mood)
     end
 
     private
