@@ -2,13 +2,13 @@ class Api::V1::UsersController < ApplicationController
 
     def index
         @users = User.all
-        render json: @users
+        render json: UserSerializer.new(@users)
     end
 
     def create
         @user = User.new(user_params)
         if @user.save
-            render json: @user
+            render json: UserSerializer.new(@user)
         else
             render json: {error: "Error creating user"}
         end
@@ -16,7 +16,7 @@ class Api::V1::UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
-        render json: @user
+        render json: UserSerializer.new(@user)
     end
 
     def destroy
@@ -31,7 +31,7 @@ class Api::V1::UsersController < ApplicationController
     def update
         @user = User.find(params[:id])
         @user.update(username: params[:user][:username], password: params[:user][:password])
-        render json: @user
+        render json: UserSerializer.new(@user)
     end
 
     private
